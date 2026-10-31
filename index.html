@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#182b2b">
+  <title>كُشري المعلم | KOSHARY EL MAALLEM</title>
+  <link rel="stylesheet" href="./css/game.css">
+  <link rel="stylesheet" href="./css/hud.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="loading" class="screen-overlay">
+    <div class="loading-card">
+      <div class="brand-mark">ك</div>
+      <h1>كُشري المعلم</h1>
+      <p>بنجهّز الشارع والمحل...</p>
+      <div class="loading-track"><span id="loading-progress"></span></div>
+    </div>
+  </div>
+
+  <main id="game-root">
+    <div id="crosshair" aria-hidden="true"></div>
+    <section id="hud" class="hud hidden">
+      <div class="hud-brand"><strong>كُشري المعلم</strong><small>شارع المعلم</small></div>
+      <div class="hud-stats">
+        <div class="stat"><span class="stat-icon">ج</span><div><small>الرصيد</small><b id="money">١٬٥٠٠ ج</b></div></div>
+        <div class="stat"><span class="stat-icon">◷</span><div><small>الوقت</small><b id="clock">09:00</b></div></div>
+      </div>
+      <button id="pause-button" class="hud-button" aria-label="إيقاف مؤقت">Ⅱ</button>
+    </section>
+
+    <div id="interaction-hint" class="interaction-hint hidden"><kbd>E</kbd><span id="hint-text">اضغط للتفاعل</span></div>
+
+    <section id="start-screen" class="menu-screen">
+      <div class="menu-panel">
+        <div class="eyebrow">محاكاة حياة ومطعم مصري</div>
+        <h1>كُشري <span>المعلم</span></h1>
+        <p>ابدأ من محل صغير في شارع مصري، وخلّي اسمك معروف في المنطقة.</p>
+        <div class="menu-meta"><span>منظور الشخص الأول</span><span>عالم ثلاثي الأبعاد</span></div>
+        <button id="start-button" class="primary-button">ابدأ اللعب <span>←</span></button>
+        <p class="control-note">الكمبيوتر: WASD للحركة · الماوس للنظر · E للتفاعل · Shift للجري</p>
+        <p class="control-note mobile-note">الموبايل: اسحب الشاشة للنظر واستخدم عصا الحركة والأزرار</p>
+      </div>
+    </section>
+
+    <section id="pause-screen" class="menu-screen hidden">
+      <div class="menu-panel compact">
+        <div class="eyebrow">استراحة قصيرة</div>
+        <h2>اللعبة متوقفة</h2>
+        <button id="resume-button" class="primary-button">كمّل اللعب</button>
+        <button id="save-button" class="secondary-button">حفظ التقدم الآن</button>
+        <button id="back-menu-button" class="text-button">العودة للقائمة</button>
+      </div>
+    </section>
+
+    <section id="dialog" class="dialog hidden">
+      <div class="dialog-card">
+        <button id="dialog-close" class="close-button" aria-label="إغلاق">×</button>
+        <div class="eyebrow" id="dialog-kicker">كُشري المعلم</div>
+        <h2 id="dialog-title">أهلاً بيك</h2>
+        <p id="dialog-body"></p>
+        <div id="dialog-actions" class="dialog-actions"></div>
+      </div>
+    </section>
+
+    <div id="mobile-controls" class="mobile-controls hidden">
+      <div id="joystick" class="joystick"><div id="joystick-knob"></div></div>
+      <div class="mobile-actions">
+        <button id="mobile-interact" class="mobile-action interact-action">تفاعل</button>
+        <button id="mobile-run" class="mobile-action">جري</button>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <div id="screen-fade"></div>
+  </main>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
