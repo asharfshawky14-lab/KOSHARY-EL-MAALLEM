@@ -1,0 +1,15 @@
+#hud{position:fixed;z-index:10;top:0;left:0;right:0;display:flex;align-items:center;gap:14px;padding:14px 18px;pointer-events:none}
+.hud-brand{display:flex;flex-direction:column;margin-left:auto;text-shadow:0 2px 8px #000}.hud-brand strong{font-size:16px}.hud-brand small{font-size:10px;color:#e3c17c}
+.hud-stats{display:flex;gap:8px}.stat{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:12px;background:#15221fd9;border:1px solid #ffffff20;box-shadow:0 5px 20px #0003}.stat-icon{width:27px;height:27px;display:grid;place-items:center;border-radius:9px;background:#d0a65d;color:#1c2a24;font-weight:900}.stat div{display:flex;flex-direction:column}.stat small{font-size:9px;color:#b9c2b8}.stat b{font-size:12px}
+.hud-button{pointer-events:auto;width:39px;height:39px;border-radius:12px;border:1px solid #ffffff30;background:#15221fd9;color:#fff;font-size:17px}
+#crosshair{position:fixed;z-index:8;left:50%;top:50%;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #0006;pointer-events:none}
+.interaction-hint{position:fixed;z-index:9;left:50%;top:58%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:8px 13px;border-radius:10px;background:#17241fe8;border:1px solid #e0bd7955;color:#fff;font-size:12px;white-space:nowrap}
+.interaction-hint kbd{font:700 11px inherit;padding:3px 7px;border-radius:5px;background:#d4b16d;color:#17241f}
+.mobile-controls{position:fixed;z-index:11;inset:auto 0 20px;display:flex;align-items:end;justify-content:space-between;padding:0 22px;pointer-events:none}
+.joystick{width:112px;height:112px;border-radius:50%;background:#16272288;border:1px solid #ffffff55;position:relative;pointer-events:auto;touch-action:none;box-shadow:inset 0 0 25px #0005}
+#joystick-knob{position:absolute;width:48px;height:48px;border-radius:50%;left:31px;top:31px;background:#d8b56d;border:2px solid #fff8;box-shadow:0 4px 12px #0006}
+.mobile-actions{display:flex;flex-direction:column;gap:10px;pointer-events:auto}
+.mobile-action{min-width:76px;padding:13px 12px;border-radius:16px;border:1px solid #ffffff55;background:#172a25dd;color:white;font-weight:800;box-shadow:0 5px 20px #0005}
+.interact-action{background:#d1a75d;color:#1b2822}
+@media(min-width:701px){.mobile-controls{display:none!important}}
+@media(max-width:700px){#hud{padding:10px}.hud-brand strong{font-size:13px}.stat{padding:6px 8px}.stat-icon{width:23px;height:23px}.stat b{font-size:10px}.hud-button{width:35px;height:35px}.interaction-hint{top:53%}}
